@@ -1,0 +1,37 @@
+@import 'node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+@import 'node_modules/bootstrap-icons/font/bootstrap-icons.css';
+.search-box {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-box input[type="text"] {
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .search-button {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .search-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .search-button:focus {
+    outline: none;
+  }
+  
+  .search-button .glyphicon {
+    margin-right: 5px;
+  }
+
+  

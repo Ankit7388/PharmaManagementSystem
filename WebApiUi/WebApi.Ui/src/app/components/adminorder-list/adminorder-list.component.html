@@ -1,0 +1,41 @@
+<div class="container my-5">
+    <h1 class="'mb-3">Orders</h1>
+    <div class="search-box">
+        <input type="text" placeholder="Search" [(ngModel)] ="useremail">
+        <button type="submit" class="search-button" (click)=getOrderByEmail(useremail)>
+            search
+        </button>
+      </div>
+    <table class="table" *ngIf="showOrders && showOrders.length>0">
+        <thead>
+            <tr>
+                <th>OrderId</th>
+                <th>UserEmail</th>
+                <th></th>
+                <th>OrderedQuantity</th>
+                <th>OrderedPrice</th>
+                <th>DrugName</th>
+                <th>OrderDate</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cart of showOrders">
+                <td>{{ cart.OrderId}}</td>
+                <td>{{ cart.UserEmail}}</td>
+                <td> </td>
+                <td>{{ cart.OrderedQuantity}}</td>
+                <td>{{ cart.OrderPrice}}</td>
+                <td>{{ cart.DrugName}}</td>
+                <td>{{ cart.OrderedDate}}</td>
+
+            </tr>
+        </tbody>
+
+    </table>
+    <p *ngIf="!showOrders || showOrders.length <=0">No Orders</p>
+    <button (click)="printPage()" class="btn btn-primary" >Print</button>
+
+</div>
+
+
+

@@ -1,0 +1,31 @@
+<div class="container my-5">
+    <h1 class="'mb-3">CartItems</h1>
+    <table class="table" *ngIf="showOrders && showOrders.length>0">
+        <thead>
+            <tr>
+                <th>OrderId</th>
+                <th>OrderedQuantity</th>
+                <th>OrderedPrice</th>
+                <th>DrugName</th>
+                <th>OrderDate</th>
+                <th> </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cart of showOrders">
+                <td>{{ cart.OrderId}}</td>
+                <td>{{ cart.OrderedQuantity}}</td>
+                <td>{{ cart.OrderPrice}}</td>
+                <td>{{ cart.DrugName}}</td>
+                <td>{{ cart.OrderedDate}}</td>
+                <td><button class="btn btn-danger" (click)="deleteOrder(cart.OrderId)">Delete</button></td>
+
+            </tr>
+        </tbody>
+
+    </table>
+    <p *ngIf="!showOrders || showOrders.length <=0">Your Cart is Empty</p>
+    <button (click)="printPage()" class="btn btn-primary" >Print</button>
+</div>
+
+
